@@ -2,12 +2,15 @@ from vinyaasa import *
 
 def start_recording(fname):
     ff = open(fname, 'w')
-    ff.write('| स्थिति | सूत्र | टिप्पणी |\n| ----- | ------- | ------ |\n')
+    ff.write('स्थिति, सूत्र, टिप्पणी\n')
     return ff
 
 
-def record(ff, स्थिति, सूत्र, टिप्पणी):
-    ff.write('| {} | {} | {} |\n'.format(get_shabda(स्थिति), सूत्र, टिप्पणी))
+def record(fname, s, t, r):
+    ff = open(fname, 'a')
+    print(s)
+    ff.write(s + ', ' + t + ', ' + r +'\n')
+    ff.close()
 
 def end_recording(ff):
     ff.close()

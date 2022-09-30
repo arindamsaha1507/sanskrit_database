@@ -1,12 +1,15 @@
 import pandas as pd
 from dhaatu_creator import Dhaatu
+import yaml
+from pathlib import Path
 
 def get_dhaatu(query, find_unique=False):
 
     df = pd.read_csv('धातु.csv')
 
     for ii in query.keys():
-        df = df[df[ii] == query[ii]]
+        if ii in df.columns:
+            df = df[df[ii] == query[ii]]
     
     idx = df.index.values
 
@@ -20,12 +23,8 @@ def get_dhaatu(query, find_unique=False):
 
 if __name__ == '__main__':
 
-    query = {
-        'उपदेश': 'मी॒ञ्',
-        # 'गण': 'भ्वादि',
-        # 'उपदेश': 'गुपँ॒'
-    }
-
+    query = yaml.safe_load(Path('input.yml').read_text())
+    
     d = get_dhaatu(query)
 
     for x in d:

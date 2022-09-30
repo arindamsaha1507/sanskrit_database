@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{polyglossia}
+
+\usepackage[hyphens]{url}
+\usepackage{titlesec}
+\usepackage[affil-it]{authblk}
+\usepackage{titling}
+
+\setmainlanguage{hindi}
+\newfontfamily\devanagarifont[Script=Devanagari]{Sanskrit 2003}
+\titleformat*{\section}{\Large\devanagarifont}
+\titleformat*{\subsection}{\large\devanagarifont}
+
+\renewcommand{\maketitlehooka}{\devanagarifont}
+\renewcommand\Authfont{\fontsize{12}{14.4}\devanagarifont}
+\renewcommand\Affilfont{\fontsize{9}{10.8}\itshape}
+
+\newcommand{\devanagarinumeral}[1]{%
+  \devanagaridigits{\number\csname c@#1\endcsname}}
+
+% renew all representation of counters
+\renewcommand{\thesection}{\devanagarinumeral{section}}
+\renewcommand{\thechapter}{\devanagarinumeral{chapter}}
+\renewcommand{\thepage}{\devanagarinumeral{page}}
+\renewcommand{\theenumi}{\devanagarinumeral{enumi}}
+
+
+\author{अरिन्दम साहा}
+\title{व्याकरणाध्ययन}
+\begin{document}
+
+\maketitle
+
+\chapter{प्रस्तावना}
+
+शब्दभूता भाषा। भाषायां प्रयुक्ताः शब्दाः बहवः अर्थाः प्रतिपाद्यन्ते। सार्थकशब्दोच्चारणे सम्भाषणं जातम्। सम्भाषणं भावान् नयति। भावनयने समृद्धिः।
+अतः शब्दः समृद्धिमूलः।
+
+शब्दः द्विधा। सार्थकश्च निरर्थकश्च। सार्थकाः शब्दा एव भाषायां प्रयुक्तव्यम्। ननु सार्थकशब्दस्य किं प्रमाणम्? व्याकरणम् इति। शब्दशुद्धिशास्त्रं व्याकरणम्। इदं शास्त्रे लघूनां शब्दांशानां योजने सार्थकशब्दाः निष्पद्यते। के ते शब्दांशाः? कथं तेषां योजनम्? इत्यादयः व्याकरणशास्त्रस्य विषयाः।
+
+\end{document}

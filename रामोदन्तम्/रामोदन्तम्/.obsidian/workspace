@@ -1,0 +1,133 @@
+{
+  "main": {
+    "id": "5d6de51c5965927b",
+    "type": "split",
+    "children": [
+      {
+        "id": "251e69a33f0ab730",
+        "type": "leaf",
+        "dimension": 30.81967213114754,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "मूल.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "26157c77edca6d4c",
+        "type": "split",
+        "dimension": 69.18032786885246,
+        "children": [
+          {
+            "id": "ac57f5956882733a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "श्लोक १.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4ee95c6b0a246b2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "आख्यास्ये.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "98594d2b6a9abbce",
+    "type": "split",
+    "children": [
+      {
+        "id": "1fc3407b88235908",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "48f04f0fa26e1653",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "8bbbd652d603676f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 180.5107650756836
+  },
+  "right": {
+    "id": "872fd656ef463f54",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa003ff959226a95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0766f38a38bc4c92",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "श्लोक १.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ac57f5956882733a",
+  "lastOpenFiles": [
+    "मूल.md",
+    "ख्या प्राक्कथने (अदादि).md",
+    "श्लोक १.md",
+    "आख्यास्ये.md",
+    "इडादेश.md",
+    "उपदेशेऽजनुनासिक इत् (१.३.१).md",
+    "लृट् शेषे च (३.३.१३).md"
+  ]
+}
