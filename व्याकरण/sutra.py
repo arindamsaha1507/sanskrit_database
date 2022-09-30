@@ -597,8 +597,8 @@ def झलां_जशोऽन्ते(df):
         if s[ii-1] in expand_pratyahaara('झय्') and s[ii+1] == 'ह्':
             df = झयो_होऽन्यतरस्याम्(df)
 
-    elif ' ' not in s:
-        df = वाऽवसाने(df)
+        if s[ii+1] in avasaana:
+            df = वाऽवसाने(df)
 
     return df
 
@@ -936,7 +936,7 @@ def वाऽवसाने(df):
 
     s = pre_processing(df)
 
-    ii = len(s)
+    ii = s.index(' ')
 
     if s[ii-1] in expand_pratyahaara('झल्'):
 

@@ -1,17 +1,19 @@
 import pandas as pd
+import yaml
+from pathlib import Path
 
 from pratyaahaara import expand_pratyahaara
 from varna import *
 from vinyaasa import get_shabda, get_vinyaasa
 from sutra import *
 
-def pada_sandhi(mm):
+def pada_sandhi(mm, df=None):
 
     fname = 'output.csv'
 
-    df = pd.DataFrame(columns=['स्थिति', 'सूत्र', 'टिप्पणी'])
+    if df is None:
 
-    # print(mm)
+        df = pd.DataFrame(columns=['स्थिति', 'सूत्र', 'टिप्पणी'])
 
     pada = mm.split(' ')
 
@@ -23,7 +25,6 @@ def pada_sandhi(mm):
     row = {'स्थिति': mm, 'सूत्र': '-', 'टिप्पणी': '-'}
     df = df.append(row, ignore_index=True)
 
-    # ss = get_vinyaasa(s)
     pv = get_vinyaasa(primary)
     sv = get_vinyaasa(secondary)
 
@@ -92,15 +93,53 @@ def pada_sandhi(mm):
     s = get_vinyaasa(s)
     if ' ' in s:
         ii = s.index(' ')
-        if s[ii-1] in expand_pratyahaara('हल्'):
+        if s[ii-1] in expand_pratyahaara('हल्') and s[ii+1] not in avasaana:
             s = remove_avasaana(s)
-        df = post_processing(df, s, '-', '-', '-')
+    row = {'स्थिति': get_shabda(s), 'सूत्र': '-', 'टिप्पणी': '-'}
+    df = df.append(row, ignore_index=True)
 
     return df
 
+def word_seprator(s):
+
+    ss =  s.split(' ')
+
+    for ii in range(len(ss)):
+        if get_vinyaasa(ss[ii])[-1] == 'ः':
+            vv = get_vinyaasa(ss[ii])
+            vv[-1] = 'स्'
+            ss[ii] = get_shabda(vv)
+
+    return ss
 
 if __name__ == '__main__':
 
-    jj = 'रामैस् गणति'
-    df = pada_sandhi(jj)
+    query = yaml.safe_load(Path('input.yml').read_text())
+
+    ww = word_seprator(query['वाक्य'])
+
+    print(ww)
+
+    df = None
+
+    for ii in range(len(ww)):
+
+        # print(ii)
+
+        if ii == 0 or ww[ii-1] in avasaana:
+            jj = ww[ii]
+        else:
+            jj = jj + ' ' + ww[ii]
+            df = pada_sandhi(jj, df)
+            jj = get_sthiti(df)
+            # print(df)
+            # print(jj)
+            if ' ' in jj:
+                qq = jj.split(' ')
+                jj = qq[-1]
+                print(qq[0], end=' ')
+                if qq[-1] in avasaana:
+                    print(qq[-1], end=' ')
+        
+
     df.to_csv('output.csv', index=False)
